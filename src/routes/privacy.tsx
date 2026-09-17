@@ -1,0 +1,1 @@
+import {createFileRoute} from '@tanstack/react-router';import {makeHead} from '@/lib/site';import {LegalPage} from '@/components/theo/LegalPage';export const Route=createFileRoute('/privacy')({head:()=>makeHead('Privacy Policy','How THEO₂ handles website and enquiry information.','/privacy'),component:()=> <LegalPage type="privacy"/>});

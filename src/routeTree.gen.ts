@@ -10,33 +10,336 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as R404RouteImport } from './routes/404'
+import { Route as AlgaeRouteImport } from './routes/algae'
+import { Route as ApplicationsRouteImport } from './routes/applications'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as EngineeringRouteImport } from './routes/engineering'
+import { Route as FollowTheBreathRouteImport } from './routes/follow-the-breath'
+import { Route as FounderRouteImport } from './routes/founder'
+import { Route as FutureRouteImport } from './routes/future'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as IndiaRouteImport } from './routes/india'
+import { Route as InfrastructureRouteImport } from './routes/infrastructure'
+import { Route as InvestorsRouteImport } from './routes/investors'
+import { Route as MediaRouteImport } from './routes/media'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProjectGreenRouteImport } from './routes/project-green'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as TechnologyRouteImport } from './routes/technology'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as Theo2RouteImport } from './routes/theo2'
+import { Route as VehicleAirRouteImport } from './routes/vehicle-air'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const R404Route = R404RouteImport.update({
+  id: '/404',
+  path: '/404',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlgaeRoute = AlgaeRouteImport.update({
+  id: '/algae',
+  path: '/algae',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationsRoute = ApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EngineeringRoute = EngineeringRouteImport.update({
+  id: '/engineering',
+  path: '/engineering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FollowTheBreathRoute = FollowTheBreathRouteImport.update({
+  id: '/follow-the-breath',
+  path: '/follow-the-breath',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FounderRoute = FounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FutureRoute = FutureRouteImport.update({
+  id: '/future',
+  path: '/future',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndiaRoute = IndiaRouteImport.update({
+  id: '/india',
+  path: '/india',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfrastructureRoute = InfrastructureRouteImport.update({
+  id: '/infrastructure',
+  path: '/infrastructure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestorsRoute = InvestorsRouteImport.update({
+  id: '/investors',
+  path: '/investors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaRoute = MediaRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectGreenRoute = ProjectGreenRouteImport.update({
+  id: '/project-green',
+  path: '/project-green',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TechnologyRoute = TechnologyRouteImport.update({
+  id: '/technology',
+  path: '/technology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Theo2Route = Theo2RouteImport.update({
+  id: '/theo2',
+  path: '/theo2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VehicleAirRoute = VehicleAirRouteImport.update({
+  id: '/vehicle-air',
+  path: '/vehicle-air',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
+  '/algae': typeof AlgaeRoute
+  '/applications': typeof ApplicationsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/engineering': typeof EngineeringRoute
+  '/follow-the-breath': typeof FollowTheBreathRoute
+  '/founder': typeof FounderRoute
+  '/future': typeof FutureRoute
+  '/gallery': typeof GalleryRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/impact': typeof ImpactRoute
+  '/india': typeof IndiaRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/investors': typeof InvestorsRoute
+  '/media': typeof MediaRoute
+  '/privacy': typeof PrivacyRoute
+  '/project-green': typeof ProjectGreenRoute
+  '/roadmap': typeof RoadmapRoute
+  '/technology': typeof TechnologyRoute
+  '/terms': typeof TermsRoute
+  '/theo2': typeof Theo2Route
+  '/vehicle-air': typeof VehicleAirRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
+  '/algae': typeof AlgaeRoute
+  '/applications': typeof ApplicationsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/engineering': typeof EngineeringRoute
+  '/follow-the-breath': typeof FollowTheBreathRoute
+  '/founder': typeof FounderRoute
+  '/future': typeof FutureRoute
+  '/gallery': typeof GalleryRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/impact': typeof ImpactRoute
+  '/india': typeof IndiaRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/investors': typeof InvestorsRoute
+  '/media': typeof MediaRoute
+  '/privacy': typeof PrivacyRoute
+  '/project-green': typeof ProjectGreenRoute
+  '/roadmap': typeof RoadmapRoute
+  '/technology': typeof TechnologyRoute
+  '/terms': typeof TermsRoute
+  '/theo2': typeof Theo2Route
+  '/vehicle-air': typeof VehicleAirRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/404': typeof R404Route
+  '/algae': typeof AlgaeRoute
+  '/applications': typeof ApplicationsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/engineering': typeof EngineeringRoute
+  '/follow-the-breath': typeof FollowTheBreathRoute
+  '/founder': typeof FounderRoute
+  '/future': typeof FutureRoute
+  '/gallery': typeof GalleryRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/impact': typeof ImpactRoute
+  '/india': typeof IndiaRoute
+  '/infrastructure': typeof InfrastructureRoute
+  '/investors': typeof InvestorsRoute
+  '/media': typeof MediaRoute
+  '/privacy': typeof PrivacyRoute
+  '/project-green': typeof ProjectGreenRoute
+  '/roadmap': typeof RoadmapRoute
+  '/technology': typeof TechnologyRoute
+  '/terms': typeof TermsRoute
+  '/theo2': typeof Theo2Route
+  '/vehicle-air': typeof VehicleAirRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/404'
+    | '/algae'
+    | '/applications'
+    | '/contact'
+    | '/disclaimer'
+    | '/engineering'
+    | '/follow-the-breath'
+    | '/founder'
+    | '/future'
+    | '/gallery'
+    | '/how-it-works'
+    | '/impact'
+    | '/india'
+    | '/infrastructure'
+    | '/investors'
+    | '/media'
+    | '/privacy'
+    | '/project-green'
+    | '/roadmap'
+    | '/technology'
+    | '/terms'
+    | '/theo2'
+    | '/vehicle-air'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/404'
+    | '/algae'
+    | '/applications'
+    | '/contact'
+    | '/disclaimer'
+    | '/engineering'
+    | '/follow-the-breath'
+    | '/founder'
+    | '/future'
+    | '/gallery'
+    | '/how-it-works'
+    | '/impact'
+    | '/india'
+    | '/infrastructure'
+    | '/investors'
+    | '/media'
+    | '/privacy'
+    | '/project-green'
+    | '/roadmap'
+    | '/technology'
+    | '/terms'
+    | '/theo2'
+    | '/vehicle-air'
+  id:
+    | '__root__'
+    | '/'
+    | '/404'
+    | '/algae'
+    | '/applications'
+    | '/contact'
+    | '/disclaimer'
+    | '/engineering'
+    | '/follow-the-breath'
+    | '/founder'
+    | '/future'
+    | '/gallery'
+    | '/how-it-works'
+    | '/impact'
+    | '/india'
+    | '/infrastructure'
+    | '/investors'
+    | '/media'
+    | '/privacy'
+    | '/project-green'
+    | '/roadmap'
+    | '/technology'
+    | '/terms'
+    | '/theo2'
+    | '/vehicle-air'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R404Route: typeof R404Route
+  AlgaeRoute: typeof AlgaeRoute
+  ApplicationsRoute: typeof ApplicationsRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  EngineeringRoute: typeof EngineeringRoute
+  FollowTheBreathRoute: typeof FollowTheBreathRoute
+  FounderRoute: typeof FounderRoute
+  FutureRoute: typeof FutureRoute
+  GalleryRoute: typeof GalleryRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  ImpactRoute: typeof ImpactRoute
+  IndiaRoute: typeof IndiaRoute
+  InfrastructureRoute: typeof InfrastructureRoute
+  InvestorsRoute: typeof InvestorsRoute
+  MediaRoute: typeof MediaRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProjectGreenRoute: typeof ProjectGreenRoute
+  RoadmapRoute: typeof RoadmapRoute
+  TechnologyRoute: typeof TechnologyRoute
+  TermsRoute: typeof TermsRoute
+  Theo2Route: typeof Theo2Route
+  VehicleAirRoute: typeof VehicleAirRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +351,195 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/404': {
+      id: '/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof R404RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/algae': {
+      id: '/algae'
+      path: '/algae'
+      fullPath: '/algae'
+      preLoaderRoute: typeof AlgaeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/applications': {
+      id: '/applications'
+      path: '/applications'
+      fullPath: '/applications'
+      preLoaderRoute: typeof ApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/engineering': {
+      id: '/engineering'
+      path: '/engineering'
+      fullPath: '/engineering'
+      preLoaderRoute: typeof EngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/follow-the-breath': {
+      id: '/follow-the-breath'
+      path: '/follow-the-breath'
+      fullPath: '/follow-the-breath'
+      preLoaderRoute: typeof FollowTheBreathRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/future': {
+      id: '/future'
+      path: '/future'
+      fullPath: '/future'
+      preLoaderRoute: typeof FutureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/india': {
+      id: '/india'
+      path: '/india'
+      fullPath: '/india'
+      preLoaderRoute: typeof IndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infrastructure': {
+      id: '/infrastructure'
+      path: '/infrastructure'
+      fullPath: '/infrastructure'
+      preLoaderRoute: typeof InfrastructureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investors': {
+      id: '/investors'
+      path: '/investors'
+      fullPath: '/investors'
+      preLoaderRoute: typeof InvestorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media': {
+      id: '/media'
+      path: '/media'
+      fullPath: '/media'
+      preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project-green': {
+      id: '/project-green'
+      path: '/project-green'
+      fullPath: '/project-green'
+      preLoaderRoute: typeof ProjectGreenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/technology': {
+      id: '/technology'
+      path: '/technology'
+      fullPath: '/technology'
+      preLoaderRoute: typeof TechnologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/theo2': {
+      id: '/theo2'
+      path: '/theo2'
+      fullPath: '/theo2'
+      preLoaderRoute: typeof Theo2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vehicle-air': {
+      id: '/vehicle-air'
+      path: '/vehicle-air'
+      fullPath: '/vehicle-air'
+      preLoaderRoute: typeof VehicleAirRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R404Route: R404Route,
+  AlgaeRoute: AlgaeRoute,
+  ApplicationsRoute: ApplicationsRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  EngineeringRoute: EngineeringRoute,
+  FollowTheBreathRoute: FollowTheBreathRoute,
+  FounderRoute: FounderRoute,
+  FutureRoute: FutureRoute,
+  GalleryRoute: GalleryRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  ImpactRoute: ImpactRoute,
+  IndiaRoute: IndiaRoute,
+  InfrastructureRoute: InfrastructureRoute,
+  InvestorsRoute: InvestorsRoute,
+  MediaRoute: MediaRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProjectGreenRoute: ProjectGreenRoute,
+  RoadmapRoute: RoadmapRoute,
+  TechnologyRoute: TechnologyRoute,
+  TermsRoute: TermsRoute,
+  Theo2Route: Theo2Route,
+  VehicleAirRoute: VehicleAirRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

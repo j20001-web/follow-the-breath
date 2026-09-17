@@ -1,24 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowDown, ArrowRight, CircleDot, Wind } from "lucide-react";
+import { TheoProduct } from "@/components/theo/ProductVisual";
+import { makeHead } from "@/lib/site";
+export const Route=createFileRoute('/')({head:()=>({...makeHead("THEO₂ | Project Green | Next-Generation Clean-Air Infrastructure","THEO₂ Project Green is building next-generation algae-based air purification technology for cleaner air, smarter cities and a greener future.","/"),scripts:[{type:"application/ld+json",children:JSON.stringify({"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"THEO₂ / Project Green","parentOrganization":{"@type":"Organization","name":"SmartO2"},"url":"https://www.theo2.in"},{"@type":"WebSite","name":"THEO₂ Project Green","url":"https://www.theo2.in"},{"@type":"Product","name":"THEO₂","description":"An emerging clean-air infrastructure concept combining filtration and algae-based purification research.","brand":{"@type":"Brand","name":"THEO₂"}}]})}]}),component:Home});
+const story=[{n:"01",label:"THE PROBLEM",title:"AIR HAS BECOME AN INFRASTRUCTURE CHALLENGE.",copy:"Cities need new, measurable approaches to local air quality—designed for real roads, transit systems and public environments.",to:"/impact"},{n:"02",label:"FOLLOW THE BREATH",title:"ONE PARTICLE. ONE REMARKABLE JOURNEY.",copy:"Trace polluted air through intake, filtration, a controlled algae chamber and outward toward a cleaner-air vision.",to:"/follow-the-breath"},{n:"03",label:"THE TECHNOLOGY",title:"WHAT IS THEO₂?",copy:"A modular clean-air infrastructure concept combining engineered airflow, staged filtration, algae-based research and monitoring.",to:"/theo2"},{n:"04",label:"ENGINEERING",title:"THE MACHINE, MADE VISIBLE.",copy:"Explore assembled, exploded, X-ray and airflow views of one consistent product system.",to:"/how-it-works"},{n:"05",label:"THE LIVING ENGINE",title:"ALGAE AT THE HEART OF THE SYSTEM.",copy:"Established photosynthetic science meets a controlled reactor and an ambitious program of engineering validation.",to:"/algae"},{n:"06",label:"FROM ONE TO MANY",title:"AIR IS INFRASTRUCTURE.",copy:"One measured installation can become a pilot. Pilots can inform a proposed city network.",to:"/infrastructure"},{n:"07",label:"INDIA VISION",title:"BUILDING INDIA'S NEXT CLEAN-AIR INFRASTRUCTURE.",copy:"A scalable future vision, clearly separated from current deployment reality.",to:"/india"}];
+function Home(){return <><section className="home-hero"><div className="particles" aria-hidden>{Array.from({length:24},(_,i)=><i key={i}/>)}</div><div className="home-copy"><span className="eyebrow">PROJECT GREEN</span><h1>THE FUTURE<br/>OF CLEAN AIR.</h1><p>Next-Generation Algae-Based Air Purification<br/>for a Cleaner, Greener, Healthier Future.</p><div><Link to="/theo2">EXPLORE THEO₂ <ArrowRight/></Link><Link to="/follow-the-breath">FOLLOW THE BREATH <Wind/></Link></div></div><TheoProduct/><div className="scroll-note"><ArrowDown/>SCROLL TO FOLLOW THE BREATH</div></section>
+<section className="manifesto"><span>THEO₂ / SMARTO2</span><h2>ONE BREATH<br/>TRAVELS THROUGH<br/>THE ENTIRE COMPANY.</h2><p>A new clean-air category begins with a simple question: what if the air around our cities could be treated as infrastructure?</p></section>
+{story.map((s,i)=><section className={`home-chapter ${i%2?'reverse':''}`} key={s.n}><div className="chapter-number">{s.n}</div><div><span className="eyebrow">{s.label}</span><h2>{s.title}</h2><p>{s.copy}</p><Link to={s.to}>EXPLORE <ArrowRight/></Link></div><div className="chapter-visual">{i===2||i===3?<TheoProduct mode={i===3?'exploded':'assembled'}/>:<div className="breath-ring"><CircleDot/><span>{s.label}</span></div>}</div></section>)}
+<section className="tenx"><div><span className="eyebrow">CONCEPTUAL TARGET</span><h2>10× O₂</h2><p>“10× O₂” is a project performance concept and is subject to engineering testing and independent validation. It is not a claim of pure oxygen production.</p></div><div className="bubble-column">{Array.from({length:10},(_,i)=><i key={i}/>)}</div></section>
+<section className="founder-preview"><div className="founder-placeholder"><span>FOUNDER PORTRAIT<br/>AWAITING APPROVED ASSET</span></div><div><span className="eyebrow">FOUNDER / PROJECT GREEN</span><h2>JATIN GUPTA</h2><p>“Building a cleaner, greener and healthier future through next-generation air technology.”</p><Link to="/founder">MEET THE FOUNDER <ArrowRight/></Link></div></section>
+<section className="investor-close"><span>THE NEXT CHAPTER</span><h2>THE FUTURE OF CLEAN AIR<br/>IS INFRASTRUCTURE.</h2><div><Link to="/investors">INVESTOR OVERVIEW <ArrowRight/></Link><Link to="/contact">START A CONVERSATION <ArrowRight/></Link></div></section></>}
