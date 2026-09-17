@@ -14,16 +14,365 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          id: string
+          opportunity: string
+          problem: string
+          role: string
+          slug: string
+          sort_order: number
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          opportunity?: string
+          problem?: string
+          role?: string
+          slug: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          opportunity?: string
+          problem?: string
+          role?: string
+          slug?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      contact_submissions: {
+        Row: {
+          company: string
+          created_at: string
+          email: string
+          id: string
+          interest: string
+          message: string
+          name: string
+          phone: string
+          status: Database["public"]["Enums"]["submission_status"]
+        }
+        Insert: {
+          company?: string
+          created_at?: string
+          email: string
+          id?: string
+          interest: string
+          message: string
+          name: string
+          phone?: string
+          status?: Database["public"]["Enums"]["submission_status"]
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          email?: string
+          id?: string
+          interest?: string
+          message?: string
+          name?: string
+          phone?: string
+          status?: Database["public"]["Enums"]["submission_status"]
+        }
+        Relationships: []
+      }
+      gallery_items: {
+        Row: {
+          alt_text: string
+          category: string
+          id: string
+          image_url: string
+          sort_order: number
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          alt_text?: string
+          category: string
+          id?: string
+          image_url?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          alt_text?: string
+          category?: string
+          id?: string
+          image_url?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      homepage_content: {
+        Row: {
+          body: string
+          eyebrow: string
+          id: string
+          section_key: string
+          sort_order: number
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: string
+          eyebrow?: string
+          id?: string
+          section_key: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string
+          eyebrow?: string
+          id?: string
+          section_key?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      investor_content: {
+        Row: {
+          body: string
+          id: string
+          section_key: string
+          sort_order: number
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: string
+          id?: string
+          section_key: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string
+          id?: string
+          section_key?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      investor_requests: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          organization: string
+          status: Database["public"]["Enums"]["submission_status"]
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message?: string
+          name: string
+          organization?: string
+          status?: Database["public"]["Enums"]["submission_status"]
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          organization?: string
+          status?: Database["public"]["Enums"]["submission_status"]
+        }
+        Relationships: []
+      }
+      media_items: {
+        Row: {
+          category: string
+          id: string
+          media_type: string
+          poster_url: string
+          sort_order: number
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+          url: string
+        }
+        Insert: {
+          category: string
+          id?: string
+          media_type?: string
+          poster_url?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+          url?: string
+        }
+        Update: {
+          category?: string
+          id?: string
+          media_type?: string
+          poster_url?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+          url?: string
+        }
+        Relationships: []
+      }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      roadmap_items: {
+        Row: {
+          body: string
+          classification: string
+          id: string
+          sort_order: number
+          stage: string
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: string
+          classification?: string
+          id?: string
+          sort_order?: number
+          stage: string
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string
+          classification?: string
+          id?: string
+          sort_order?: number
+          stage?: string
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      technology_sections: {
+        Row: {
+          body: string
+          classification: string
+          id: string
+          label: string
+          slug: string
+          sort_order: number
+          status: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: string
+          classification?: string
+          id?: string
+          label: string
+          slug: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string
+          classification?: string
+          id?: string
+          label?: string
+          slug?: string
+          sort_order?: number
+          status?: Database["public"]["Enums"]["content_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "editor"
+      content_status: "draft" | "published"
+      submission_status: "new" | "reviewing" | "closed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +499,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "editor"],
+      content_status: ["draft", "published"],
+      submission_status: ["new", "reviewing", "closed"],
+    },
   },
 } as const
