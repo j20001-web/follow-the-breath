@@ -19,6 +19,7 @@ export const nav = [
 
 export function makeHead(title: string, description: string, path: string, type = "website") {
   const fullTitle = title.includes("THEO₂") ? title : `${title} | THEO₂`;
+  const url = `${SITE.url}${path === "/" ? "" : path}`;
   return {
     meta: [
       { title: fullTitle },
@@ -26,11 +27,11 @@ export function makeHead(title: string, description: string, path: string, type 
       { property: "og:title", content: fullTitle },
       { property: "og:description", content: description },
       { property: "og:type", content: type },
-      { property: "og:url", content: path },
+      { property: "og:url", content: url },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: fullTitle },
       { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: path }],
+    links: [{ rel: "canonical", href: url }],
   };
 }
