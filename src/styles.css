@@ -678,3 +678,43 @@ main { flex: 1; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Auth, admin, investor form, newsletter */
+.auth-page{min-height:70vh;display:grid;place-items:center;padding:8rem 1.5rem}
+.auth-card{width:min(460px,100%);background:var(--glass,rgba(255,255,255,.7));border:1px solid rgba(20,60,40,.08);border-radius:22px;padding:2.5rem;backdrop-filter:blur(14px)}
+.auth-card h1{font-size:2rem;letter-spacing:-.02em;margin:.4rem 0}
+.auth-card p{opacity:.7;font-size:.95rem}
+.auth-card form{display:grid;gap:1rem;margin-top:1.75rem}
+.auth-card label,.investor-form-section label{display:grid;gap:.45rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.auth-card input,.investor-form-section input,.investor-form-section textarea{border:1px solid rgba(20,60,40,.15);background:rgba(255,255,255,.75);border-radius:12px;padding:.85rem 1rem;font:inherit;font-size:.95rem;letter-spacing:normal;text-transform:none}
+.auth-card button,.investor-form-section button{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;border:none;border-radius:999px;padding:.95rem 1.4rem;background:#12351f;color:#f6faf5;font-size:.75rem;letter-spacing:.18em;cursor:pointer}
+.auth-card .oauth-button{width:100%;margin-top:.9rem;background:transparent;color:#12351f;border:1px solid rgba(20,60,40,.2)}
+.auth-card .link-button{width:100%;background:none;color:#12351f;opacity:.7;letter-spacing:normal;text-transform:none;font-size:.9rem;padding:.6rem}
+.admin-page{padding:8rem 1.5rem 6rem;max-width:1200px;margin:0 auto}
+.admin-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.admin-head h1{font-size:2.4rem;letter-spacing:-.02em}
+.admin-head button{border:1px solid rgba(20,60,40,.2);background:transparent;border-radius:999px;padding:.7rem 1.3rem;font-size:.7rem;letter-spacing:.18em;cursor:pointer}
+.admin-note{opacity:.7;font-size:.95rem;margin:1rem 0}
+.admin-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start}
+.admin-panel{background:rgba(255,255,255,.7);border:1px solid rgba(20,60,40,.08);border-radius:20px;padding:1.6rem}
+.admin-panel h2{font-size:.75rem;letter-spacing:.2em;opacity:.7;margin-bottom:1rem}
+.admin-panel h2 small{opacity:.5}
+.admin-panel article{border-top:1px solid rgba(20,60,40,.08);padding:1rem 0}
+.admin-panel article h3{font-size:1.05rem}
+.admin-meta{font-size:.8rem;opacity:.6;margin:.25rem 0 .5rem}
+.admin-actions{display:flex;gap:.4rem;margin-top:.7rem;flex-wrap:wrap}
+.admin-actions button{border:1px solid rgba(20,60,40,.18);background:transparent;border-radius:999px;padding:.35rem .8rem;font-size:.62rem;letter-spacing:.14em;cursor:pointer}
+.admin-actions button:disabled{background:#12351f;color:#f6faf5;border-color:#12351f;cursor:default}
+.admin-list{list-style:none;display:grid;gap:.4rem;font-size:.9rem;opacity:.8}
+.investor-form-section{display:grid;gap:3rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));padding:6rem 1.5rem;max-width:1200px;margin:0 auto}
+.investor-form-section h2{font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.02;margin:.6rem 0 1.2rem}
+.investor-form-section p{opacity:.75;max-width:46ch}
+.investor-form-section .claim-note{font-size:.8rem;opacity:.55;margin-top:1rem}
+.investor-form-section form{display:grid;gap:1rem;align-content:start}
+.newsletter{margin-top:1.5rem;display:grid;gap:.5rem}
+.newsletter label{font-size:.65rem;letter-spacing:.2em;opacity:.6}
+.newsletter div{display:flex;gap:.5rem}
+.newsletter input[type=email]{flex:1;min-width:0;border:1px solid rgba(20,60,40,.15);background:rgba(255,255,255,.7);border-radius:999px;padding:.7rem 1rem;font:inherit;font-size:.9rem}
+.newsletter button{border:none;background:#12351f;color:#f6faf5;border-radius:999px;width:44px;height:44px;display:grid;place-items:center;cursor:pointer}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+@media (max-width:640px){.admin-page,.auth-page{padding-top:6rem}.auth-card{padding:1.75rem}}
