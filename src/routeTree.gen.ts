@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as R404RouteImport } from './routes/404'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AlgaeRouteImport } from './routes/algae'
 import { Route as ApplicationsRouteImport } from './routes/applications'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as EngineeringRouteImport } from './routes/engineering'
@@ -33,6 +35,7 @@ import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as Theo2RouteImport } from './routes/theo2'
 import { Route as VehicleAirRouteImport } from './routes/vehicle-air'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -44,6 +47,10 @@ const R404Route = R404RouteImport.update({
   path: '/404',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AlgaeRoute = AlgaeRouteImport.update({
   id: '/algae',
   path: '/algae',
@@ -52,6 +59,11 @@ const AlgaeRoute = AlgaeRouteImport.update({
 const ApplicationsRoute = ApplicationsRouteImport.update({
   id: '/applications',
   path: '/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -154,12 +166,18 @@ const VehicleAirRoute = VehicleAirRouteImport.update({
   path: '/vehicle-air',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/algae': typeof AlgaeRoute
   '/applications': typeof ApplicationsRoute
+  '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/engineering': typeof EngineeringRoute
@@ -180,12 +198,14 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/theo2': typeof Theo2Route
   '/vehicle-air': typeof VehicleAirRoute
+  '/admin': typeof AuthenticatedAdminRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/algae': typeof AlgaeRoute
   '/applications': typeof ApplicationsRoute
+  '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/engineering': typeof EngineeringRoute
@@ -206,13 +226,16 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/theo2': typeof Theo2Route
   '/vehicle-air': typeof VehicleAirRoute
+  '/admin': typeof AuthenticatedAdminRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/404': typeof R404Route
   '/algae': typeof AlgaeRoute
   '/applications': typeof ApplicationsRoute
+  '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/engineering': typeof EngineeringRoute
@@ -233,6 +256,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/theo2': typeof Theo2Route
   '/vehicle-air': typeof VehicleAirRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -241,6 +265,7 @@ export interface FileRouteTypes {
     | '/404'
     | '/algae'
     | '/applications'
+    | '/auth'
     | '/contact'
     | '/disclaimer'
     | '/engineering'
@@ -261,12 +286,14 @@ export interface FileRouteTypes {
     | '/terms'
     | '/theo2'
     | '/vehicle-air'
+    | '/admin'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/404'
     | '/algae'
     | '/applications'
+    | '/auth'
     | '/contact'
     | '/disclaimer'
     | '/engineering'
@@ -287,12 +314,15 @@ export interface FileRouteTypes {
     | '/terms'
     | '/theo2'
     | '/vehicle-air'
+    | '/admin'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/404'
     | '/algae'
     | '/applications'
+    | '/auth'
     | '/contact'
     | '/disclaimer'
     | '/engineering'
@@ -313,13 +343,16 @@ export interface FileRouteTypes {
     | '/terms'
     | '/theo2'
     | '/vehicle-air'
+    | '/_authenticated/admin'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   R404Route: typeof R404Route
   AlgaeRoute: typeof AlgaeRoute
   ApplicationsRoute: typeof ApplicationsRoute
+  AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   EngineeringRoute: typeof EngineeringRoute
@@ -358,6 +391,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof R404RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/algae': {
       id: '/algae'
       path: '/algae'
@@ -370,6 +410,13 @@ declare module '@tanstack/react-router' {
       path: '/applications'
       fullPath: '/applications'
       preLoaderRoute: typeof ApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -512,14 +559,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VehicleAirRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   R404Route: R404Route,
   AlgaeRoute: AlgaeRoute,
   ApplicationsRoute: ApplicationsRoute,
+  AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   EngineeringRoute: EngineeringRoute,
