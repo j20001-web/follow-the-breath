@@ -773,3 +773,5 @@ main { flex: 1; }
 .newsletter button{border:none;background:#12351f;color:#f6faf5;border-radius:999px;width:44px;height:44px;display:grid;place-items:center;cursor:pointer}
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 @media (max-width:640px){.admin-page,.auth-page{padding-top:6rem}.auth-card{padding:1.75rem}}
+.founder-portrait { aspect-ratio: 4 / 5; border-radius: 20px; overflow: hidden; }
+.founder-portrait img, .page-founder .product-photo img { object-fit: cover; object-position: center 25%; }

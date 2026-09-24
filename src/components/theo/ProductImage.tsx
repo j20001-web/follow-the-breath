@@ -1,3 +1,4 @@
+import founder from "@/assets/theo/jatin-gupta.png.asset.json";
 import capsule from "@/assets/theo/capsule.jpeg.asset.json";
 import engineering from "@/assets/theo/engineering.webp.asset.json";
 import highway from "@/assets/theo/highway.jpeg.asset.json";
@@ -6,7 +7,7 @@ import metro from "@/assets/theo/metro.jpeg.asset.json";
 import roadNetwork from "@/assets/theo/road-network.webp.asset.json";
 import vehicle from "@/assets/theo/vehicle.png.asset.json";
 
-export type ProductImageKey = "capsule" | "engineering" | "highway" | "india" | "metro" | "road" | "vehicle";
+export type ProductImageKey = "capsule" | "engineering" | "highway" | "india" | "metro" | "road" | "vehicle" | "founder";
 
 const images: Record<ProductImageKey, { src: string; alt: string }> = {
   capsule: { src: capsule.url, alt: "THEO₂ urban air purification capsule concept" },
@@ -16,6 +17,7 @@ const images: Record<ProductImageKey, { src: string; alt: string }> = {
   metro: { src: metro.url, alt: "Conceptual algae reactor installation at an urban metro station" },
   road: { src: roadNetwork.url, alt: "Conceptual network of THEO₂ towers on an urban roadway" },
   vehicle: { src: vehicle.url, alt: "THEO₂ compact vehicle air-treatment concept" },
+  founder: { src: founder.url, alt: "Jatin Gupta, Founder of THEO₂ / Project Green" },
 };
 
 export function ProductImage({ image, label, priority = false, className = "" }: { image: ProductImageKey; label?: string; priority?: boolean; className?: string }) {
