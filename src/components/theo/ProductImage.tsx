@@ -76,8 +76,8 @@ export function ProductImage({
         fetchPriority={priority ? "high" : "auto"}
         onError={(e) => {
           const target = e.currentTarget;
-          if (!target.dataset.triedFallback && target.src.includes("/__l5e/assets-v1/")) {
-            target.dataset.triedFallback = "true";
+          if (!target.dataset["triedFallback"] && target.src.includes("/__l5e/assets-v1/")) {
+            target.dataset["triedFallback"] = "true";
             target.src = `https://follow-the-breath.lovable.app${new URL(target.src).pathname}`;
           }
         }}
